@@ -61,6 +61,7 @@ Database tables:
 
 ## Notes and Future Improvements
 
+* Currently, the gene selector does not have a submit button, because the variants table is immediately called when the user selects a gene from the autocomplete dropdown. But this UI could fail if the user pastes in a gene name or types in the full gene name but does not select a gene from the dropdown.
 * The autocomplete currently makes a request to the server every time the user types into the field beyond the first two characters. But once we've gotten the data based on the first two characters, we could avoid extra server requests by matching further characters in the browser in JS.
 * The front-end tests are currently MINIMAL. They should be expanded.
 * In production, we would not want to use the React dev server. We would compile the JS, including minifying it, and serve it as a static asset. We would also likely place the flask server behind Nginx, possibly additionally with a cache like Varnish.
