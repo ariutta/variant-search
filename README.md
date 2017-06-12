@@ -7,17 +7,24 @@ A genomic variant web application that allows a user to search for genomic varia
 Install dependencies:
 * PostgreSQL
 * Python3, with packages `Flask`, `requests`, `requests_cache`, `psycopg2` and `stringcase`
-* Node.js (`npm install`)
+* Node.js
+
+Clone repo:
+```
+git clone https://github.com/ariutta/variant-search.git
+cd variant-search
+```
+Install front-end dependencies:  `npm install`
 
 Create and load database: `python build.py`
 
 Start servers:
-Backend:
+* Backend:
 ```
 export FLASK_APP=server.py
 python3 -m flask run
 ```
-Frontend: `npm run start`
+* Frontend: `npm run start`
 
 ## Test
 
@@ -40,24 +47,12 @@ For Protein Change, should values like "p.=", "p.?", "-" and "p.(=)" be parsed a
 ## Server
 
 Endpoints:
-1. /suggestions?gene=OAT
+1. /suggestions?gene=OA
   * Input two or more letters
   * Get back a list of matching gene names
 2. /variants?gene=OAT
   * Input a gene name
   * Get back a table of details
-
-Database tables:
-* Gene names, indexed to allow suggestions
-* Reported classifications
-* Inferred Classifications
-* Sources
-* Variants (one per row of source data)
-
-## Front-End
-
-1. Gene name typeahead
-2. Gene details table
 
 ## Notes and Future Improvements
 
